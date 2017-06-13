@@ -1,0 +1,8 @@
+extends ../partials/master.amber
+
+block content
+  section
+    h1 All posts
+    ul.mdl-list
+      each $i, $page in where(Site.Pages, "Type", "post")
+        import ../partials/page_card.amber

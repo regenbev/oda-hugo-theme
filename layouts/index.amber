@@ -1,0 +1,8 @@
+extends partials/master.amber
+
+block content
+  section
+    h1 Latest posts
+    each $i, $page in where(Site.Pages, "Kind", "page")
+      if $i < Site.Params.latestPostsCount
+        import partials/page_card.amber

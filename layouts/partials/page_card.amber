@@ -1,0 +1,15 @@
+div.mdl-card.mdl-shadow--2dp[style="width: 90%;"]
+  div.mdl-card__title
+    a[href=Permalink]
+      h2.mdl-card__title-text #{Title}
+  div.mdl-card__supporting-text
+    time[datetime=Date.Format("2006-01-02T15:04:05Z07:00")]
+      #{Date.Format("Jan 2, 2006")}
+    p #{Summary}
+  div.mdl-card__actions.mdl-card--border
+    each $tag in Params.tags
+      span.mdl-chip
+        span.mdl-chip__text #{$tag}
+  div.mdl-card__menu
+    span.material-icons.mdl-badge.mdl-badge--overlap[data-badge=ReadingTime] access_time
+br
