@@ -32,5 +32,7 @@ div.mdl-layout.mdl-js-layout.mdl-layout--fixed-drawer
               a[href="/"] Home
             li
               a[href="/sitemap.xml"] Sitemap
-            li
-              a[href=Site.Params.github][target="_blank"] Github
+            $gh = Site.Params.github
+            if $gh
+              li
+                a[href=$gh][target="_blank"] Github
