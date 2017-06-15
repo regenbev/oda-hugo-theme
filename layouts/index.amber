@@ -2,7 +2,8 @@ extends partials/base.amber
 
 block content
   section
-    h1 Latest posts
+    h4 Latest posts
+    ul.demo-list-three.mdl-list
     each $i, $page in where(Site.Pages, "Kind", "page")
       if $i < Site.Params.latestPostsCount
-        import partials/page_card.amber
+        import partials/li.amber

@@ -7,6 +7,8 @@ head
   meta[name="referrer"][content="no-referrer"]
   meta[name="author"][content=Site.Params.author]
   meta[name="description"][content=Site.Params.description]
+  style
+    .material-icons.md-18 { font-size: 18px; }
 
 
 // Fixed drawer.
@@ -17,6 +19,11 @@ div.mdl-layout.mdl-js-layout.mdl-layout--fixed-drawer
       a.mdl-navigation__link[href="/"] Home
       each $menu in Site.Menus.main
         a.mdl-navigation__link[href=URL] #{Name}
+      $gh = Site.Params.github
+        if $gh
+          a.mdl-navigation__link[href=$gh][target="_blank"]
+            i.material-icons.md-18 open_in_new
+            span Github
 
   main.mdl-layout__content
     div.page-content[style="margin: 50px;"]
@@ -27,12 +34,16 @@ div.mdl-layout.mdl-js-layout.mdl-layout--fixed-drawer
     footer.mdl-mini-footer
       div.mdl-mini-footer__left-section
         div.mdl-logo #{Site.Title}
-          ul.mdl-mini-footer__link-list
+        ul.mdl-mini-footer__link-list
+          li
+            a[href="/"] Home
+          li
+            a[href="/sitemap.xml"] Sitemap
+          $gh = Site.Params.github
+          if $gh
             li
-              a[href="/"] Home
-            li
-              a[href="/sitemap.xml"] Sitemap
-            $gh = Site.Params.github
-            if $gh
-              li
-                a[href=$gh][target="_blank"] Github
+              a[href=$gh][target="_blank"]
+                i.material-icons.md-18 open_in_new
+                span Github
+      div.mdl-mini-footer__right-section
+        span © #{Site.Params.Author}

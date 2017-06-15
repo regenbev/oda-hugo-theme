@@ -2,7 +2,7 @@ extends ../partials/base.amber
 
 block content
   section
-    h1 All posts
-    ul.mdl-list
+    h4 All posts
+    ul.demo-list-three.mdl-list
       each $i, $page in where(Site.Pages, "Type", "post")
-        import ../partials/page_card.amber
+        import ../partials/li.amber
