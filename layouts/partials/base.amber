@@ -33,7 +33,8 @@ div.mdl-layout.mdl-js-layout.mdl-layout--fixed-drawer
     // Footer.
     footer.mdl-mini-footer
       div.mdl-mini-footer__left-section
-        div.mdl-logo #{Site.Title}
+        div.mdl-logo
+          #{Site.Title} ・ #{Site.Params.Description}
         ul.mdl-mini-footer__link-list
           li
             a[href="/"] Home
@@ -48,7 +49,5 @@ div.mdl-layout.mdl-js-layout.mdl-layout--fixed-drawer
               a[href=$gh][target="_blank"]
                 i.material-icons.md-18 open_in_new
                 span Github
-      $a = Site.Params.Author
-      if $a
-        div.mdl-mini-footer__right-section
-          span © $a
+      div.mdl-mini-footer__right-section
+        span © #{Site.Params.author}
