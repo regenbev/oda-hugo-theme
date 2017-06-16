@@ -1,0 +1,5 @@
+h4 All posts
+ul.mdl-list
+  each $i, $page in where(Site.Pages, "Type", "post")
+    if $page.Content
+      import li.amber

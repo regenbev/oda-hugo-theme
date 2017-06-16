@@ -1,15 +1,13 @@
-extends ../partials/base.amber
+extends partials/base.amber
 
 block content
   section
     div.material-icons.mdl-badge.mdl-badge--overlap[data-badge=ReadingTime] access_time
-    span min. read
+
+  article
+    #{Content}
 
   section
     each $tag in Params.tags
       span.mdl-chip
         span.mdl-chip__text #{$tag}
-
-  article
-    #{TableOfContents}
-    #{Content}
