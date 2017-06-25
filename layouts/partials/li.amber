@@ -7,3 +7,4 @@ li.mdl-list__item.mdl-list__item--three-line
     span.mdl-list__item-text-body #{Summary}
   span.mdl-list__item-secondary-content
     span.material-icons.mdl-badge.mdl-badge--overlap[data-badge=ReadingTime] access_time
+    span min. read

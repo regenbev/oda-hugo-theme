@@ -1,5 +1,17 @@
 extends partials/base.amber
 
+block headincludes
+  script[src="/js/paper-full.min.js"]
+  // TODO(timothe): avoid 100% CPU...
+  script[src="/js/smallthings.js"][type="text/paperscript"][canvas="sheet"]
+
 block content
-  section
-    import partials/all_posts.amber
+  section[style="text-align: center;"]
+    img#im[src="/img/DSC_3243.jpg"][style="display: none"]
+    canvas#sheet
+    p Small things makes us, let's make small things
+    // Add "change"
+
+  if len(where(Site.Pages, "Type", "post")) > 0
+    section
+      import partials/all_posts.amber

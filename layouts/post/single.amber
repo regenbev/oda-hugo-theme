@@ -5,7 +5,7 @@ block content
     div.material-icons.mdl-badge.mdl-badge--overlap[data-badge=ReadingTime] access_time
     span min. read
 
-  section
+  section[style="padding-top:10px"]
     each $tag in Params.tags
       span.mdl-chip
         span.mdl-chip__text #{$tag}
